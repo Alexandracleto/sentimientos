@@ -1,5 +1,7 @@
 🎯 SentimentAPI - Frontend Dashboard (Amazon ES)
+
 📋 Descripción
+
 Interfaz de usuario interactiva desarrollada en React para el sistema de análisis de sentimientos de reseñas de Amazon en español. Este Frontend consume la API de inteligencia artificial y visualiza de forma dinámica el sistema homologado de clasificación emocional, métricas de estrellas y dashboards estadísticos.
 
 📁 Estructura del Proyecto Frontend
