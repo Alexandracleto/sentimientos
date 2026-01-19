@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+🎯 SentimentAPI - Frontend Dashboard (Amazon ES)
+📋 Descripción
+Interfaz de usuario interactiva desarrollada en React para el sistema de análisis de sentimientos de reseñas de Amazon en español. Este Frontend consume la API de inteligencia artificial y visualiza de forma dinámica el sistema homologado de clasificación emocional, métricas de estrellas y dashboards estadísticos.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+📁 Estructura del Proyecto Frontend
+Plaintext
 
-## Available Scripts
+sentimientos/
+├── public/              # Archivos estáticos
+├── src/
+│   ├── App.js           # Lógica principal, Dashboard y Gráficos
+│   ├── App.css          # Estilos personalizados (Glassmorphism & Gradients)
+│   ├── index.js         # Punto de entrada de React
+│   └── components/      # Componentes modulares
+├── package.json         # Dependencias del proyecto
+└── README.md            # Documentación de usabilidad
+🚀 Instalación y Despliegue
+1. Clonar el repositorio y acceder a la rama de desarrollo:
 
-In the project directory, you can run:
+Bash
 
-### `npm start`
+git clone https://github.com/Alexandracleto/sentimientos.git
+cd sentimientos
+git checkout Ale-dev
+2. Instalar dependencias del ecosistema:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Bash
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+npm install
+Dependencias principales: recharts (Gráficos), lucide-react (Iconografía), react-scripts.
 
-### `npm test`
+3. Iniciar entorno de desarrollo:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Bash
 
-### `npm run build`
+npm start
+4. Producción (Vercel): El proyecto cuenta con integración continua. Cada push a la rama principal genera un despliegue automático en la infraestructura de Vercel.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+🔧 Usabilidad de la Interfaz
+Entrada de Datos: El usuario ingresa el texto de la reseña en el área de procesamiento (limitado a 500 caracteres).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Análisis: Al accionar el botón "Analizar Sentimiento", se dispara un estado de carga (analyzing) que simula el tiempo de respuesta del modelo.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Interpretación: * Se muestra el Sentiment Label con colores dinámicos.
 
-### `npm run eject`
+Se visualiza el Confidence Score mediante una barra de progreso animada.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Los Widgets de Estadísticas se actualizan en tiempo real sumando el nuevo registro al historial.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Pruebas Rápidas: Botones pre-configurados para testear respuestas Positivas, Negativas y Neutrales de forma inmediata.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+💻 Conectividad con la API
+El Frontend está diseñado para mapear el objeto JSON de respuesta:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+JSON
 
-## Learn More
+{
+  "sentiment": "positivo",
+  "score": 0.9575,
+  "text": "¡Este hackathon es increíble!"
+}
+🔧 Notas Técnicas (Frontend)
+Estilos: No utiliza frameworks CSS externos (Tailwind/Bootstrap). Se implementó CSS Nativo con variables personalizadas y efectos de Glassmorphism (backdrop-filter).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Gráficos: Implementación de ResponsiveContainer para asegurar que el Dashboard sea visualmente correcto en móviles y escritorio.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Versión: 2.0.0 - Enero 2026.
